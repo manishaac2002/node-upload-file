@@ -1,8 +1,8 @@
 import express from 'express';
 import multer from 'multer';
 //to connecting aws to upload the file in s3 bucket
-import { fromCognitoIdentityPool } from ('@aws-sdk/credential-provider-cognito-identity')
-import { S3Client } from ('@aws-sdk/s3');
+import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity'
+import  S3Client from '@aws-sdk/s3';
 // environment variables
 import dotenv from 'dotenv'
 
@@ -17,6 +17,7 @@ const accessKey = process.env.ACCESS_KEY
 const secretAccessKey = process.env.SECRET_ACCESS_KEY
 const identityPoolId = process.env.IDENTITY_POOL_ID
 console.log(bucketName);
+
 // credential details
 const s3 = new S3Client({
   // AWS region
@@ -89,3 +90,4 @@ application.post("/multipleFile", fileUpload.array("image", 3), (request, respon
 
 // port number
 application.listen(1000)
+
