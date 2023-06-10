@@ -74,7 +74,7 @@ application.post("/single", fileUpload.single("image"), async (request, response
 // to upload multiple file uploads
 application.post("/multipleFile", fileUpload.array("image", 3), (request, response) => {
   console.log(request.files);
-  // it returns in this form while print the file inn print statement
+  // it returns in this form while print the file in print statement
   // {
   //     fieldname   : 'image',
   //     originalname: 'Bollywood Snapped_ Photo.jpg',
