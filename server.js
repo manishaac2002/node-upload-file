@@ -48,7 +48,7 @@ const fileStorage = multer.diskStorage({
       // to identify add date function
       callBack(null, Date.now() + '--' + file.originalname)
     }
-  }
+  } 
 })
 
 // storage property with help of multer function which uploads the file
