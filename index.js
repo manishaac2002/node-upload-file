@@ -15,7 +15,6 @@ const fileStorage =multer.diskStorage({
         callback(null,file.originalname)
     }
     }
-  
 })
 
 const fileUploaded =multer({storage:fileStorage})
@@ -27,8 +26,8 @@ application.post('/single',fileUploaded.single("images"), (request,response)=>{
 })
 
 
-const port =1233
+const port =5004
 
-application.listen(1233,()=>{
+application.listen(5004,()=>{
     console.log(`Serve is running on the ${port}`);
 })
